@@ -1,0 +1,51 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  branch_id: MyString
+  branch_name: MyString
+  address: MyString
+  postal_code: MyString
+  phone: MyString
+  free_wifi: MyString
+  monday_open: MyString
+  monday_close: MyString
+  tuesday_open: MyString
+  tuesday_close: MyString
+  wednesday_open: MyString
+  wednesday_close: MyString
+  thursday_open: MyString
+  thursday_close: MyString
+  friday_open: MyString
+  friday_close: MyString
+  saturday_open: MyString
+  saturday_close: MyString
+  sunday_open: MyString
+  sunday_close: 
+  latitude: 
+  longitude: 
+  coordinates: MyString
+
+two:
+  branch_id: MyString
+  branch_name: MyString
+  address: MyString
+  postal_code: MyString
+  phone: MyString
+  free_wifi: MyString
+  monday_open: MyString
+  monday_close: MyString
+  tuesday_open: MyString
+  tuesday_close: MyString
+  wednesday_open: MyString
+  wednesday_close: MyString
+  thursday_open: MyString
+  thursday_close: MyString
+  friday_open: MyString
+  friday_close: MyString
+  saturday_open: MyString
+  saturday_close: MyString
+  sunday_open: MyString
+  sunday_close: 
+  latitude: 
+  longitude: 
+  coordinates: MyString
