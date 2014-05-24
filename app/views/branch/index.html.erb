@@ -4,7 +4,7 @@
 </div>
   <ol>
   <% @branches.each do |branch| %>
-    <li><%= branch.branch_name %>: <%= branch.longitude %>, <%= branch.latitude %></li>
+    <li><%= branch.branch_name %>: <%= branch.address %></li>
   <% end %>
   </ol>
 <script language="javascript">
@@ -12,7 +12,7 @@
   L.tileLayer('http://{s}.tiles.mapbox.com/v3/<%= @mapbox_id %>/{z}/{x}/{y}.png', { attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery $copy; <a href="http://mapbox.com">Mapbox</a>',maxZoom: 18}).addTo(map);
   <% @branches.each do |branch| %>
     var marker = L.marker([<%= branch.latitude %>, <%= branch.longitude %>]).addTo(map);
-    marker.bindPopup("<%= branch.branch_name %>, <%= branch.address %>");
+    marker.bindPopup("<%= branch.branch_name %><br /><%= branch.address %><br /><%= branch.phone %><br /><br />M: <%= branch.monday_open %>-<%= branch.monday_close %><br />T: <%= branch.tuesday_open %>-<%= branch.tuesday_close %><br />W: <%= branch.wednesday_open %>-<%= branch.wednesday_close %><br />T: <%= branch.thursday_open %>-<% branch.thursday_close %><br />F: <%= branch.friday_open %>-<%= branch.friday_close %><br />S: <%= branch.saturday_open %>-<%= branch.saturday_close %><br />S: <%= branch.sunday_open %>-<% branch.sunday_close %>");
   <% end %>
 </script>
 
