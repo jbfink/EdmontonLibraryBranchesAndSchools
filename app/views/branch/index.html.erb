@@ -5,11 +5,24 @@
 
 <div id="map">
 </div>
+  <div id="library_branches">
+  <h2>Edmonton Public Library Branches</h2>
   <ol>
-  <% @branches.each do |branch| %>
+<% @branches.each do |branch| %>
     <li><%= branch.branch_name %>: <%= branch.address %></li>
   <% end %>
   </ol>
+  </div>
+
+  <div id="schools">
+  <h2>Edmonton Schools</h2>
+  <ol>
+  <% @schools.each do |school| %>
+    <li><%= school.school_name %> (<%= school.school_type %>)</li>
+  <% end %>
+  </ol>
+  </div>
+
 <script language="javascript">
   var BranchIcon = L.icon({iconUrl: '<%= image_path("blue.png") %>', iconSize: [28,40]});
   var SchoolIcon = L.icon({iconUrl: '<%= image_path("red.png") %>', iconSize: [28,40]});
