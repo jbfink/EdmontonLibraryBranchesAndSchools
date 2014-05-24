@@ -11,10 +11,10 @@
   <% end %>
   </ol>
 <script language="javascript">
-  var BranchIcon = L.icon({iconUrl: '<%= image_path("icon_15740.png") %>', iconSize: [28,40]});
-  var SchoolIcon = L.icon({iconUrl: '<%= image_path("icon_1826.png") %>', iconSize: [28,40]});
+  var BranchIcon = L.icon({iconUrl: '<%= image_path("blue.png") %>', iconSize: [28,40]});
+  var SchoolIcon = L.icon({iconUrl: '<%= image_path("red.png") %>', iconSize: [28,40]});
 
-  var CatholicIcon = L.icon({iconUrl: '<%= image_path("icon_2401.png") %>', iconSize: [28, 40]});
+  var CatholicIcon = L.icon({iconUrl: '<%= image_path("green.png") %>', iconSize: [28, 40]});
 
   var map = L.map('map').setView([53.53, -113.50], 12);
   L.tileLayer('http://{s}.tiles.mapbox.com/v3/<%= @mapbox_id %>/{z}/{x}/{y}.png', { attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery $copy; <a href="http://mapbox.com">Mapbox</a>',maxZoom: 18}).addTo(map);
