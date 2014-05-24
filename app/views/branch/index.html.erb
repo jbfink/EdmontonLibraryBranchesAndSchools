@@ -2,9 +2,16 @@
 
 <div id="map">
 </div>
-
+  <ol>
+  <% @branches.each do |branch| %>
+    <li><%= branch.branch_name %>: <%= branch.longitude %>, <%= branch.latitude %></li>
+  <% end %>
+  </ol>
 <script language="javascript">
   var map = L.map('map').setView([53.53, -113.50], 13);
   L.tileLayer('http://{s}.tiles.mapbox.com/v3/<%= @mapbox_id %>/{z}/{x}/{y}.png', { attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery $copy; <a href="http://mapbox.com">Mapbox</a>',maxZoom: 18}).addTo(map);
+  <% @branches.each do |branch| %>
+    var marker = L.marker([<%= branch.latitude %>, <%= branch.longitude %>]).addTo(map);
+  <% end %>
 </script>
 
