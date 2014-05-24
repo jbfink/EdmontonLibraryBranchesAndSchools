@@ -11,15 +11,24 @@
   <% end %>
   </ol>
 <script language="javascript">
-  var map = L.map('map').setView([53.53, -113.50], 13);
+  var BranchIcon = L.icon({iconUrl: '<%= image_path("icon_15740.png") %>', iconSize: [28,40]});
+  var SchoolIcon = L.icon({iconUrl: '<%= image_path("icon_1826.png") %>', iconSize: [28,40]});
+
+  var CatholicIcon = L.icon({iconUrl: '<%= image_path("icon_2401.png") %>', iconSize: [28, 40]});
+
+  var map = L.map('map').setView([53.53, -113.50], 12);
   L.tileLayer('http://{s}.tiles.mapbox.com/v3/<%= @mapbox_id %>/{z}/{x}/{y}.png', { attribution: 'Map data &copy; <a href="http://openstreetmap.org">OpenStreetMap</a> contributors, <a href="http://creativecommons.org/licenses/by-sa/2.0/">CC-BY-SA</a>, Imagery $copy; <a href="http://mapbox.com">Mapbox</a>',maxZoom: 18}).addTo(map);
   <% @branches.each do |branch| %>
-    var marker = L.marker([<%= branch.latitude %>, <%= branch.longitude %>]).addTo(map);
+    var marker = L.marker([<%= branch.latitude %>, <%= branch.longitude %>], {icon: BranchIcon}).addTo(map);
     marker.bindPopup("<%= branch.branch_name %><br /><%= branch.address %><br /><%= branch.phone %><br /><br />M: <%= branch.monday_open %>-<%= branch.monday_close %><br />T: <%= branch.tuesday_open %>-<%= branch.tuesday_close %><br />W: <%= branch.wednesday_open %>-<%= branch.wednesday_close %><br />T: <%= branch.thursday_open %>-<% branch.thursday_close %><br />F: <%= branch.friday_open %>-<%= branch.friday_close %><br />S: <%= branch.saturday_open %>-<%= branch.saturday_close %><br />S: <%= branch.sunday_open %>-<% branch.sunday_close %>");
   <% end %>
   <% @schools.each do |school| %>
-    var marker = L.marker([<%= school.latitude %>, <%= school.longitude %>]).addTo(map);
-    marker.bindPopup("<%= school.school_name %>");
+    <% if school.school_type == "public" %>
+      var marker = L.marker([<%= school.latitude %>, <%= school.longitude %>], {icon: SchoolIcon}).addTo(map);
+    <% else %>
+      var marker = L.marker([<%= school.latitude %>, <%= school.longitude %>], {icon: CatholicIcon}).addTo(map);
+    <% end %>
+    marker.bindPopup("<%= school.school_name %><br /><%= school.address %><br /><a href='<%= school.website %>' target='_blank'><%= school.website %></a><br /><%= school.grade_level %>");
   <% end %>
 </script>
 
