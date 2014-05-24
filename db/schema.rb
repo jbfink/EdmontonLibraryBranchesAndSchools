@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140524160900) do
+ActiveRecord::Schema.define(version: 20140524180648) do
 
   create_table "branches", force: true do |t|
     t.string   "branch_id"
@@ -37,6 +37,27 @@ ActiveRecord::Schema.define(version: 20140524160900) do
     t.decimal  "latitude",        precision: 10, scale: 6
     t.decimal  "longitude",       precision: 10, scale: 6
     t.string   "coordinates"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  create_table "schools", force: true do |t|
+    t.integer  "school_number"
+    t.string   "school_name"
+    t.string   "address"
+    t.string   "postal_code"
+    t.string   "ward"
+    t.string   "website"
+    t.string   "phone"
+    t.string   "fax"
+    t.string   "email"
+    t.string   "grade_level"
+    t.string   "grades_offered"
+    t.string   "programs"
+    t.decimal  "latitude",       precision: 10, scale: 6
+    t.decimal  "longitude",      precision: 10, scale: 6
+    t.string   "coordinates"
+    t.string   "school_type"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
