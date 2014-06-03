@@ -1,16 +1,16 @@
 <h2><%= @branch.branch_name %></h3>
 <ul>
-<li><%= @branch.branch_id %></li>
-<li><%= @branch.branch_name %></li>
-<li><%= @branch.address %></li>
-<li><%= @branch.postal_code %></li>
-<li><%= @branch.phone %></li>
-<li><%= @branch.free_wifi %></li>
-<li><%= @branch.monday_open %> - <%= @branch.monday_close %></li>
-<li><%= @branch.tuesday_open %> - <%= @branch.tuesday_close %></li>
-<li><%= @branch.wednesday_open %> - <%=@branch.wednesday_close %></li>
-<li><%= @branch.thursday_open %> - <%= @branch.thursday_close %></li>
-<li><%= @branch.friday_open %> - <%= @branch.friday_close %></li>
-<li><%= @branch.saturday_open %> - <%= @branch.saturday_close %></li>
-<li><%= @branch.sunday_open %> - <%= @branch.sunday_close %></li>
-<li>[<%= @branch.latitude %>, <%= @branch.longitude %>]</li>
+<li>Branch ID: <%= @branch.branch_id %></li>
+<li>Name: <%= @branch.branch_name %></li>
+<li>Address: <%= @branch.address %></li>
+<li>Postal Code: <%= @branch.postal_code %></li>
+<li>Phone: <%= @branch.phone %></li>
+<li>Free Wifi?: <%= @branch.free_wifi %></li>
+<li>Monday: <%= @branch.monday_open %> - <%= @branch.monday_close %></li>
+<li>Tuesday: <%= @branch.tuesday_open %> - <%= @branch.tuesday_close %></li>
+<li>Wednesday: <%= @branch.wednesday_open %> - <%=@branch.wednesday_close %></li>
+<li>Thursday: <%= @branch.thursday_open %> - <%= @branch.thursday_close %></li>
+<li>Friday: <%= @branch.friday_open %> - <%= @branch.friday_close %></li>
+<li>Saturday: <%= @branch.saturday_open %> - <%= @branch.saturday_close %></li>
+<li>Sunday: <%= @branch.sunday_open %> - <%= @branch.sunday_close %></li>
+<li>Coordinates: [<%= @branch.latitude %>, <%= @branch.longitude %>]</li>

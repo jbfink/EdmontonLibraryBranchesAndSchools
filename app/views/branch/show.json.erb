@@ -1,0 +1,25 @@
+<%=
+  vanilla = Jbuilder.encode do |json|
+  json.id = @branch.id
+  json.name = @branch.branch_name
+  json.branch_id = @branch.branch_id
+  json.address = @branch.address
+  json.phone = @branch.phone
+end .html_safe
+
+#  JSON.parse({
+#    "@context": {
+#      "name": "http://epl.ca/branches",
+#      "branch_id": "http://epl.ca/branches/ids",
+#      "address": "http://edmonton.ab.ca/addresses",
+#      "phone": "http://telecom.ab.ca/phone_numbers"
+#   },
+#   {
+#     "@id": @branch.branch_id,
+#     "name": @branch.branch_name,
+#     "branch_id": @branch.branch_id,
+#     "address": @branch.address,
+#     "phone": @branch.phone
+#   }
+#   })
+%>

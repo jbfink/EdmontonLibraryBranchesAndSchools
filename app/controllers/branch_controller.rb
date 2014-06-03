@@ -9,7 +9,7 @@ class BranchController < ApplicationController
     @branch = Branch.find(params[:id])
     respond_to do |format|
       format.html
-      format.json { render json: @branch }
+      format.json
     end
   end
 end
