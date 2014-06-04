@@ -2,12 +2,13 @@ INSTALLATION
 ===============
 
 1. Clone this repository.
-2. Run rake db:migrate
-3. Run rake import_public_libraries, rake import_public_schools, rake import_catholic_schools
-4. Run rails s
-5. /branches will show you the leaflet.js map
-6. /branch/1 will show you the html representation of a library branch
-7. /branch/1.json will show you the json-ld representation. 
+2. Run bundle install
+3. Run rake db:migrate
+4. Run rake import_public_libraries, rake import_public_schools, rake import_catholic_schools
+5. Run rails s
+6. /branches will show you the leaflet.js map
+7. /branch/1 will show you the html representation of a library branch
+8. /branch/1.json will show you the json-ld representation. 
 
 Edmonton Library Branches and Schools
 =====================================
