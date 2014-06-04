@@ -45,3 +45,4 @@ end
 # gem 'debugger', group: [:development, :test]
 #
 gem "json-ld"
+gem "active_model_serializers"
